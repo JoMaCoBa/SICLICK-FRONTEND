@@ -1,4 +1,8 @@
+import { useContext } from "react"
+import { ShoppingCartContext } from "../../Context";
+
 const Card = (data) => {
+    const context = useContext(ShoppingCartContext)
     return (
         <div className="bg-white shadow-lg rounded-2xl w-56 h-60 overflow-hidden transition-transform hover:scale-105 hover:shadow-xl">
             <figure className="relative">
