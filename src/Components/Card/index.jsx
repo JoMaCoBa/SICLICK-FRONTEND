@@ -10,7 +10,9 @@ const Card = (data) => {
                     alt={data.data.name}
                     className="w-full h-48 object-cover"
                 />
-                <button className="absolute bottom-2 right-2  bg-blue-500 text-white w-8 h-8 flex items-center justify-center rounded-full text-lg font-bold shadow-md hover:bg-blue-600 transition">
+                <button 
+                    className="absolute bottom-2 right-2  bg-blue-500 text-white w-8 h-8 flex items-center justify-center rounded-full text-lg font-bold shadow-md hover:bg-blue-600 transition"
+                    onClick={() => context.setCount(context.count + 1)}>
                     +
                 </button>
             </figure>
