@@ -4,10 +4,20 @@ import { ShoppingCartContext } from "../../Context";
 
 const Card = (data) => {
     const context = useContext(ShoppingCartContext)
+
     const showProduct = (productDetail) => {
         context.openProductDetail()
         context.setProductToShow(productDetail)
     }
+
+    const addToCart = (event, productData) => {
+        event.stopPropagation()
+        context.setCount(context.count + 1)
+        context.setProductList([...context.productList, productData])
+        context.openCheckoutSideMenu()
+        context.closeProductDetail()
+    }
+
     return (
         <div 
             className="bg-white shadow-lg rounded-2xl w-56 h-60 overflow-hidden transition-transform hover:scale-105 hover:shadow-xl"
@@ -23,7 +33,7 @@ const Card = (data) => {
                 />
                 <button 
                     className="absolute bottom-2 right-2  bg-blue-500 text-white w-8 h-8 flex items-center justify-center rounded-full text-lg font-bold shadow-md hover:bg-blue-600 transition"
-                    onClick={() => context.setCount(context.count + 1)}>
+                    onClick={(event) => addToCart(event, data.data)}>
                     <PlusIcon className="h-6 w-6 text-white" />
                 </button>
             </figure>
