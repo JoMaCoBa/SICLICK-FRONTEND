@@ -4,8 +4,14 @@ import { ShoppingCartContext } from "../../Context";
 
 const Card = (data) => {
     const context = useContext(ShoppingCartContext)
+    const showProduct = (productDetail) => {
+        context.openProductDetail()
+        context.setProductToShow(productDetail)
+    }
     return (
-        <div className="bg-white shadow-lg rounded-2xl w-56 h-60 overflow-hidden transition-transform hover:scale-105 hover:shadow-xl">
+        <div 
+            className="bg-white shadow-lg rounded-2xl w-56 h-60 overflow-hidden transition-transform hover:scale-105 hover:shadow-xl"
+            onClick={ () => showProduct(data.data) }>
             <figure className="relative">
                 <span className="flex items-center justify-center absolute top-2 left-2 bg-black/50 text-white px-2 py-1 rounded-md text-xs">
                     {data.data.category}
