@@ -21,7 +21,7 @@ const CheckoutSideMenu = () => {
             </div>
 
             {/* Contenido */}
-            <div className="px-6">
+            <div className="px-6 overflow-y-scroll">
                 {
                     context.productList.map(product => (
                         <OrderCard key={product.productId} name={product.name} price={product.price} image={product.image} ></OrderCard>
