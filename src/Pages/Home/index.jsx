@@ -19,7 +19,7 @@ function Home() {
             <div className="grid grid-cols-4 gap-4 p-4 w-full max-w-screen-lg">
                 {
                     products?.map(product => (
-                        <Card key={product.id} data={product} />
+                        <Card key={product.productId} data={product} />
                     ))
                 }
             </div>
