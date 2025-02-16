@@ -6,6 +6,12 @@ import OrderCard from "../OrderCard";
 const CheckoutSideMenu = () => {
     const context = useContext(ShoppingCartContext);
 
+    const handleDelete = (productId) => {
+        const filteredProducts = context.productList.filter(product => product.productId !== productId);
+        context.setProductList(filteredProducts);
+        context.setCount(context.count - 1);
+    }
+
     return (
         <aside
             className={`${
@@ -24,7 +30,7 @@ const CheckoutSideMenu = () => {
             <div className="px-6 overflow-y-scroll">
                 {
                     context.productList.map(product => (
-                        <OrderCard key={product.productId} name={product.name} price={product.price} image={product.image} ></OrderCard>
+                        <OrderCard key={product.productId} productId={product.productId} name={product.name} price={product.price} image={product.image} handleDelete={handleDelete}></OrderCard>
                     ))
                 }
             </div>
