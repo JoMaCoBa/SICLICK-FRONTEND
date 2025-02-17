@@ -26,22 +26,12 @@ const Navbar = () => {
                 </li>
                 <li>
                     <NavLink
-                        to="/clothes"
+                        to="/my-orders"
                         className={({ isActive }) =>
                             isActive ? activeStyle : "hover:text-blue-500 transition-colors"
                         }
                     >
-                        Clothes
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink
-                        to="/electronics"
-                        className={({ isActive }) =>
-                            isActive ? activeStyle : "hover:text-blue-500 transition-colors"
-                        }
-                    >
-                        Electronics
+                        Orders
                     </NavLink>
                 </li>
             </ul>
