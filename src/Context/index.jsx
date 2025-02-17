@@ -23,6 +23,18 @@ export const ShoppingCartProvider = ({children}) => {
     // ShoppingCart - Product List
     const [productList, setProductList] = useState([])
 
+    // Form Context
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        address: "",      
+    })
+
+    // Funciones para manejar el formulario
+    const handleInputChange = (e) => {
+        setFormData({...formData, [e.target.name]: e.target.value})
+    }
+
     return (
         <ShoppingCartContext.Provider value={{
             count, 
@@ -38,6 +50,9 @@ export const ShoppingCartProvider = ({children}) => {
             setIsCheckoutSideMenuOpen,
             openCheckoutSideMenu,
             closeCheckoutSideMenu,
+            formData,
+            setFormData,
+            handleInputChange
             }}>
             {children}
         </ShoppingCartContext.Provider>
