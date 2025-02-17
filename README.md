@@ -57,3 +57,5 @@ El proyecto estará disponible en `http://localhost:5173/` (o el puerto que indi
 ## 📄 Licencia
 Este proyecto está bajo la licencia **MIT**.
 
+## Video de Demostración
+https://github.com/user-attachments/assets/6c4594cf-87c0-4b1c-a995-8ec21252340a
