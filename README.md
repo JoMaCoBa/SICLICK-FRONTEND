@@ -1,4 +1,4 @@
-# 🛍 Shopping Cart - Frontend
+# 🛍 SICLIK - Frontend
 
 Este proyecto es el frontend de una tienda en línea, desarrollado con React y Tailwind CSS. Se maneja el estado global con el contexto `ShoppingCartContext`.
 
